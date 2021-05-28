@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Document(collection = "Comments")
@@ -26,4 +27,7 @@ public class Comment {
     private Instant createdDate;
     @DBRef
     private User user;
+    private List<CommentVote> commentVotes;
+    private Integer upvoteCount;
+    private Integer downvoteCount;
 }
